@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{##}
+{#<select>#}
+{#     {% for i in factory %}#}
+{#  <option>{{ i.country }}</option>#}
+{#{{ i.county }}#}
+{#       {{ q }}#}
+{#     {% endfor %}#}
+{#</select>#}
+
+<div>
+   <form method="post">
+       {% csrf_token %}
+       {% for i in object_list %}
+       <label for="fac">{{ i.title }}</label>
+{#       <p><input type="submit" value={{ i.title }}></p>#}
+       <p><input type="submit" value={{ i.country }}></p>
+           {% endfor %}
+
+   </form>
+
+</div>
+{#<div id="sidebar">#}
+{#        <h3>Категории</h3>#}
+{#        <ul>#}
+{#            <li {% if not car %} class="selected"{% endif %}>#}
+{#                <a href="{% url 'prod:base' %}">Все продукты</a>#}
+{#            </li>#}
+{#            {% for c in cars %}#}
+{#            <li {% if cars == c %} class="selected" {% endif %}>#}
+{#                <a href="{{c.get_absolute_url}}">{{c.model}}</a>#}
+{#            </li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    </div>#}
+{#<div id="main" class="product_list">#}
+{#    <h1>{% if car %}{{car.model}}{% else %}Продукты{% endif %}</h1>#}
+{#    {% for product in products %}#}
+{#    <div class="item">#}
+{#        <a href="{{fact.get_absolute_url}}"></a>#}
+{#        <a href="{{fact.get_absolute_url}}">{{fact.title}}</a><br>#}
+{##}
+{#    </div>#}
+{#    {% endfor %}#}
+{#</div>#}
+
+</body>
+</html>
